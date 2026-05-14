@@ -8,3 +8,4 @@ writing/*
 .DS_Store
 data-raw/eda/*.pdf
 data-raw/nasa_data_updates/*
+data-raw/cache/

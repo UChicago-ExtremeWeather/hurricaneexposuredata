@@ -225,6 +225,43 @@
 #' Data and Information Services Center.
 "rain"
 
+#' Rainfall for US counties during Atlantic basin tropical storms
+#'
+#' A dataframe that gives daily rainfall in US counties from five days before to
+#' three days after a tropical storm's closest approach to the county. This
+#' dataset is generated from PRISM daily precipitation rasters that are first
+#' aggregated to county-day means and maxima and then aligned to the storm
+#' windows defined by \code{closest_dist}. It is intended as a PRISM-based
+#' counterpart to the legacy \code{rain} dataset.
+#'
+#' @format A dataframe with 6 variables:
+#' \describe{
+#'   \item{fips}{A character string with the county's 5-digit Federal Information
+#'               Processing Standard (FIPS) code}
+#'   \item{storm_id}{Unique storm identifier with the storm name and year,
+#'                  separated by a hyphen (e.g., "Alberto-1988",
+#'                  "Katrina-2005").}
+#'   \item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
+#'                  Forecasting System ID for the storm.}
+#'   \item{lag}{Number of days from date when storm was closest to the county
+#'              (e.g., \code{0} indicates the date the storm was closest to the
+#'              county, \code{-2} indicates two days before the date when the
+#'              storm was closest to the county)}
+#'   \item{precip}{Average daily precipitation, in millimeters, across PRISM
+#'                 raster cells intersecting the county for the given lag day}
+#'   \item{precip_max}{Maximum daily precipitation, in millimeters, across PRISM
+#'                 raster cells intersecting the county for the given lag day}
+#' }
+#'
+#' @details This dataset preserves the output structure of the legacy
+#'    \code{rain} dataset but uses a different underlying precipitation product.
+#'    County-day summaries are built from PRISM daily precipitation grids and
+#'    then matched to storm-relative windows using \code{closest_dist}.
+#'
+#' @source PRISM Climate Group at Oregon State University daily precipitation
+#'    rasters, aggregated to counties in the package build scripts.
+"rain_prism"
+
 #' Modeled county wind speeds for historical storms
 #'
 #' A dataframe with modeled winds for historical tropical storms in the

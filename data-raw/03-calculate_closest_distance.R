@@ -4,12 +4,52 @@
 library(sp)
 library(dplyr)
 library(lubridate)
+library(tidyr)
+library(purrr)
 library(hurricaneexposure)
 
 data(county_centers, package = "hurricaneexposuredata")
 data(hurr_tracks, package = "hurricaneexposuredata")
 
 library(stormwindmodel)
+library(countytimezones)
+
+add_local_time_modern <- function(df, datetime_colname, include_tz = FALSE) {
+  datetime_values <- df[[datetime_colname]]
+  date_times <- ymd_hm(datetime_values, tz = "UTC")
+  tz_lookup <- countytimezones::county_tzs %>%
+    transmute(fips = sprintf("%05d", as.integer(fips)),
+              local_tz = tz)
+
+  out <- df %>%
+    mutate(fips = sprintf("%05d", as.integer(fips))) %>%
+    left_join(tz_lookup, by = "fips")
+
+  missing_tz <- out %>%
+    filter(is.na(local_tz)) %>%
+    distinct(fips) %>%
+    pull(fips)
+  if (length(missing_tz) > 0) {
+    warning(paste("Missing timezone for FIPS:",
+                  paste(missing_tz, collapse = ", ")))
+  }
+
+  out$local_time <- NA_character_
+  out$local_date <- NA_character_
+
+  for (local_tz in unique(stats::na.omit(out$local_tz))) {
+    in_tz <- out$local_tz == local_tz & !is.na(out$local_tz)
+    local_dates <- with_tz(date_times[in_tz], tzone = local_tz)
+    out$local_time[in_tz] <- format(local_dates, "%Y-%m-%d %H:%M")
+    out$local_date[in_tz] <- format(local_dates, "%Y-%m-%d")
+  }
+
+  if (include_tz) {
+    out
+  } else {
+    dplyr::select(out, -local_tz)
+  }
+}
 
 ## Interpolate storm tracks to every 15 minutes
 all_tracks <- hurr_tracks %>%
@@ -25,11 +65,11 @@ all_tracks <- hurr_tracks %>%
                                               to = last(.x$track_time_simple),
                                               by = 0.25))) %>%
   # Interpolate latitude and longitude using natural cubic splines
-  mutate(interp_lat = map2(data, interp_time,
+  mutate(interp_lat = purrr::map2(data, interp_time,
                            ~ interpolate_spline(x = .x$track_time_simple,
                                                 y = .x$latitude,
                                                 new_x = .y))) %>%
-  mutate(interp_lon = map2(data, interp_time,
+  mutate(interp_lon = purrr::map2(data, interp_time,
                            ~ interpolate_spline(x = .x$track_time_simple,
                                                 y = .x$longitude,
                                                 new_x = .y))) %>%
@@ -85,10 +125,8 @@ hurrs <- as.character(unique(hurr_tracks$storm_id))
 closest_dist <- lapply(hurrs, calc_closest_dist)
 closest_dist <- do.call("rbind", closest_dist)
 
-library(countytimezones)
-closest_dist <- add_local_time(df = closest_dist,
+closest_dist <- add_local_time_modern(df = closest_dist,
                      datetime_colname = "closest_date",
-                     fips = closest_dist$fips,
                      include_tz = FALSE) %>%
         dplyr::rename(closest_time_utc = closest_date,
                closest_date = local_date) %>%
