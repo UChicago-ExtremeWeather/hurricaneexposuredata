@@ -2,7 +2,7 @@ Package: hurricaneexposuredata
 Type: Package
 Title: Data Characterizing Exposure to Hurricanes in United States Counties
 Version: 0.1.0
-Date: 2020-02-06
+Date: 2026-05-14
 Authors@R: c(person("Brooke", "Anderson",
     email = "brooke.anderson@colostate.edu", role = c("aut", "cre")),
     person("Andrea", "Schumacher",
@@ -25,16 +25,20 @@ Authors@R: c(person("Brooke", "Anderson",
 Description: Includes data on distance-, rain-, and event-based exposure to 
     Atlantic-basin tropical storms in United States counties. This package can be used 
     in conjunction with the 'hurricaneexposure' package to explore, map, and
-    characterize exposure to tropical storms at the county level. This work was
+    characterize exposure to tropical storms at the county level. The package
+    includes legacy storm rainfall data based on the historical CDC WONDER /
+    NLDAS workflow as well as PRISM-based rainfall datasets created through a
+    reproducible raster aggregation pipeline. This work was
     supported in part by grants from the National Institute of Environmental
     Health Sciences (R00ES022631), the National Science Foundation (1331399),
     the Department of Energy (DE-FG02-08ER64644), and a NASA Applied Sciences 
     Program/Public Health Program Grant (NNX09AV81G).
-URL: https://github.com/geanders/hurricaneexposuredata
-BugReports: https://github.com/geanders/hurricaneexposuredata/issues
+URL: https://github.com/ethanqli/hurricaneexposuredata
+BugReports: https://github.com/ethanqli/hurricaneexposuredata/issues
 License: GPL (>=2)
 LazyData: TRUE
-RoxygenNote: 7.0.2
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
 Depends:
     R (>= 3.6)
 NeedsCompilation: no

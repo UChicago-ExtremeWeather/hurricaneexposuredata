@@ -1,5 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.Rprofile$
+^\.r-lib$
+^\.DS_Store$
+^data/closest_dist_old\.rda$
 ^data-raw$
 ^writing$
 ^\.travis\.yml$

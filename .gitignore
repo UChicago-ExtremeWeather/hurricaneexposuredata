@@ -1,6 +1,7 @@
 .Rproj.user
 .Rhistory
 .RData
+.Rapp.history
 .Ruserdata
 data-raw/nasa_precip_export_2.txt
 writing
