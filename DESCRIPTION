@@ -3,24 +3,14 @@ Type: Package
 Title: Data Characterizing Exposure to Hurricanes in United States Counties
 Version: 0.1.0
 Date: 2026-05-14
-Authors@R: c(person("Brooke", "Anderson",
-    email = "brooke.anderson@colostate.edu", role = c("aut", "cre")),
-    person("Andrea", "Schumacher",
-    email = "andrea.schumacher@colostate.edu", role = c("aut")),
-    person("William", "Crosson", 
-    email = "bill.crosson@nasa.gov", role = "aut"),
-    person("Mohammad", "Al-Hamdan", 
-    email = "mohammad.alhamdan@nasa.gov", role = "aut"),
-    person("Meilin", "Yan",
-    email = "meilin.yan@colostate.edu", role = "ctb"),
-    person("Joshua", "Ferreri",
-    email = "joshua.m.ferreri@gmail.com", role = "ctb"),
-    person("Ziyu", "Chen",
-    email = "zailchen17@icloud.com", role = "ctb"),
-    person("Steven", "Quiring",
-    email = "quiring.10@osu.edu", role = c("ctb")),
-    person("Seth", "Guikema",
-    email = "sguikema@umich.edu", role = c("ctb"))
+Authors@R: c(person("Ethan", "Li",
+    email = "ethanqli@uchicago.edu", role = c("aut")),
+    person("Kate", "Burrows",
+    email = "kburrows@uchicago.edu", role = c("aut")),
+    person("Prachi", "Sanghavi", 
+    email = "psanghavi@uchicago.edu", role = "aut"),
+    person("Jessy", "Nguyen", 
+    email = "jessyjkn@bsd.uchicago.edu", role = "aut"))
     )
 Description: Includes data on distance-, rain-, and event-based exposure to 
     Atlantic-basin tropical storms in United States counties. This package can be used 
