@@ -10,7 +10,7 @@ Authors@R: c(person("Ethan", "Li",
     person("Prachi", "Sanghavi", 
     email = "psanghavi@uchicago.edu", role = "aut"),
     person("Jessy", "Nguyen", 
-    email = "jessyjkn@bsd.uchicago.edu", role = "aut"))
+    email = "jessyjkn@bsd.uchicago.edu", role = "aut")
     )
 Description: Includes data on distance-, rain-, and event-based exposure to 
     Atlantic-basin tropical storms in United States counties. This package can be used 
