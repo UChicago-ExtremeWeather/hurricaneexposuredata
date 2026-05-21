@@ -1,0 +1,101 @@
+cff-version: 1.2.0
+message: "If you use this software or data package, please cite it using the metadata from this file."
+title: "hurricaneexposuredata: Data Characterizing Exposure to Hurricanes in United States Counties"
+type: software
+version: "0.1.0"
+date-released: "2026-05-14"
+url: "https://github.com/ethanqli/hurricaneexposuredata"
+repository-code: "https://github.com/ethanqli/hurricaneexposuredata"
+license: "GPL-2.0-or-later"
+
+authors:
+  - family-names: Li
+    given-names: Ethan
+    affiliation: University of Chicago
+    email: ethanqli@uchicago.edu
+  - family-names: Burrows
+    given-names: Kate
+    affiliation: University of Chicago
+    email: kburrows@uchicago.edu
+  - family-names: Sanghavi
+    given-names: Prachi
+    affiliation: University of Chicago
+    email: psanghavi@uchicago.edu
+  - family-names: Nguyen
+    given-names: Jessy
+    affiliation: University of Chicago
+    email: jessyjkn@bsd.uchicago.edu
+
+abstract: >-
+  This repository extends Brooke Anderson and collaborators' original
+  hurricaneexposuredata R package with more recent hurricane exposure data
+  and new PRISM-based rainfall datasets. The package includes county-level
+  distance-, rain-, wind-, and event-based exposure data for Atlantic-basin
+  tropical storms in the United States.
+
+keywords:
+  - hurricanes
+  - tropical cyclones
+  - exposure data
+  - county-level data
+  - PRISM
+  - rainfall
+  - HURDAT2
+  - R package
+
+references:
+  - type: software
+    title: "hurricaneexposuredata: Data Characterizing Exposure to Hurricanes in United States Counties"
+    authors:
+      - family-names: Anderson
+        given-names: Brooke
+      - family-names: Schumacher
+        given-names: Andrea
+      - family-names: Crosson
+        given-names: William
+      - family-names: Al-Hamdan
+        given-names: Mohammad
+      - family-names: Yan
+        given-names: Meilin
+      - family-names: Ferreri
+        given-names: Joshua
+      - family-names: Chen
+        given-names: Ziyu
+      - family-names: Quiring
+        given-names: Steven
+      - family-names: Guikema
+        given-names: Seth
+    url: "https://github.com/geanders/hurricaneexposuredata"
+
+  - type: generic
+    title: "PRISM Gridded Climate Data"
+    authors:
+      - name: "PRISM Climate Group, Oregon State University"
+    url: "https://prism.oregonstate.edu"
+
+  - type: article
+    title: "Physiographically sensitive mapping of climatological temperature and precipitation across the conterminous United States"
+    authors:
+      - family-names: Daly
+        given-names: Christopher
+      - family-names: Halbleib
+        given-names: Michael
+      - family-names: Smith
+        given-names: Joseph I.
+      - family-names: Gibson
+        given-names: Wayne P.
+      - family-names: Doggett
+        given-names: Matthew K.
+      - family-names: Taylor
+        given-names: George H.
+      - family-names: Curtis
+        given-names: Jan
+      - family-names: Pasteris
+        given-names: Phillip P.
+    year: 2008
+    journal: "International Journal of Climatology"
+    volume: 28
+    issue: 15
+    start: 2031
+    end: 2064
+    doi: "10.1002/joc.1688"
