@@ -11,13 +11,18 @@ If you use the updated data in this repository, please cite this fork:
 Li E, Burrows K, Sanghavi P, and Nguyen J, based on work by Anderson B, Schumacher A, Crosson W, Al-Hamdan M,
 Yan M, Ferreri J, Chen Z, Quiring S, and Guikema S. hurricaneexposuredata:
 Data Characterizing Exposure to Hurricanes in United States Counties.
-R package version 0.1.0. https://github.com/ethanqli/hurricaneexposuredata
+R package version 0.1.0. https://doi.org/10.5281/zenodo.20320995
+
+Development repository: https://github.com/ethanqli/hurricaneexposuredata
 
 In R, users can also run:
 
 ```r
 citation("hurricaneexposuredata")
 ```
+
+For reproducible analyses, cite the version-specific Zenodo DOI for the
+release you used when available.
 
 ## Original Package
 

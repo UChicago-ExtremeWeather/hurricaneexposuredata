@@ -4,7 +4,8 @@ title: "hurricaneexposuredata: Data Characterizing Exposure to Hurricanes in Uni
 type: software
 version: "0.1.0"
 date-released: "2026-05-14"
-url: "https://github.com/ethanqli/hurricaneexposuredata"
+doi: "10.5281/zenodo.20320995"
+url: "https://doi.org/10.5281/zenodo.20320995"
 repository-code: "https://github.com/ethanqli/hurricaneexposuredata"
 license: "GPL-2.0-or-later"
 

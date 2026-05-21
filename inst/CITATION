@@ -9,4 +9,5 @@ bibentry(bibtype = "Manual",
                     person("Jessy", "Nguyen")),
          year = year,
          note = note,
+         doi = "10.5281/zenodo.20320995",
          url = "https://github.com/ethanqli/hurricaneexposuredata")
