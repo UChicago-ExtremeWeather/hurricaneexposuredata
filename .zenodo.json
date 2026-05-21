@@ -1,0 +1,89 @@
+{
+  "title": "hurricaneexposuredata: Data Characterizing Exposure to Hurricanes in United States Counties",
+  "upload_type": "software",
+  "description": "This repository extends Brooke Anderson and collaborators' original hurricaneexposuredata R package with more recent hurricane exposure data and new PRISM-based rainfall datasets. The package includes county-level distance-, rain-, wind-, and event-based exposure data for Atlantic-basin tropical storms in the United States.",
+  "creators": [
+    {
+      "name": "Li, Ethan",
+      "affiliation": "University of Chicago"
+    },
+    {
+      "name": "Burrows, Kate",
+      "affiliation": "University of Chicago"
+    },
+    {
+      "name": "Sanghavi, Prachi",
+      "affiliation": "University of Chicago"
+    },
+    {
+      "name": "Nguyen, Jessy",
+      "affiliation": "University of Chicago"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Anderson, Brooke",
+      "type": "Other"
+    },
+    {
+      "name": "Schumacher, Andrea",
+      "type": "Other"
+    },
+    {
+      "name": "Crosson, William",
+      "type": "Other"
+    },
+    {
+      "name": "Al-Hamdan, Mohammad",
+      "type": "Other"
+    },
+    {
+      "name": "Yan, Meilin",
+      "type": "Other"
+    },
+    {
+      "name": "Ferreri, Joshua",
+      "type": "Other"
+    },
+    {
+      "name": "Chen, Ziyu",
+      "type": "Other"
+    },
+    {
+      "name": "Quiring, Steven",
+      "type": "Other"
+    },
+    {
+      "name": "Guikema, Seth",
+      "type": "Other"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "hurricanes",
+    "tropical cyclones",
+    "exposure data",
+    "county-level data",
+    "PRISM",
+    "rainfall",
+    "HURDAT2",
+    "R package"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/geanders/hurricaneexposuredata",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/ethanqli/hurricaneexposuredata",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://prism.oregonstate.edu",
+      "relation": "references",
+      "scheme": "url"
+    }
+  ]
+}
