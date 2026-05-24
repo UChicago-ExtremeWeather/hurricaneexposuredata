@@ -5,12 +5,12 @@ Version: 0.1.0
 Date: 2026-05-14
 Authors@R: c(person("Ethan", "Li",
     email = "ethanqli@uchicago.edu", role = c("aut", "cre")),
-    person("Kate", "Burrows",
-    email = "kburrows@uchicago.edu", role = c("aut")),
+    person("Jessy", "Nguyen", 
+    email = "jessyjkn@bsd.uchicago.edu", role = "aut"),
     person("Prachi", "Sanghavi", 
     email = "psanghavi@uchicago.edu", role = "aut"),
-    person("Jessy", "Nguyen", 
-    email = "jessyjkn@bsd.uchicago.edu", role = "aut")
+    person("Kate", "Burrows",
+    email = "kburrows@uchicago.edu", role = c("aut"))
     )
 Description: Includes data on distance-, rain-, and event-based exposure to 
     Atlantic-basin tropical storms in United States counties. This package can be used 
@@ -18,11 +18,12 @@ Description: Includes data on distance-, rain-, and event-based exposure to
     characterize exposure to tropical storms at the county level. The package
     includes legacy storm rainfall data based on the historical CDC WONDER /
     NLDAS workflow as well as PRISM-based rainfall datasets created through a
-    reproducible raster aggregation pipeline. This work was
-    supported in part by grants from the National Institute of Environmental
-    Health Sciences (R00ES022631), the National Science Foundation (1331399),
-    the Department of Energy (DE-FG02-08ER64644), and a NASA Applied Sciences 
-    Program/Public Health Program Grant (NNX09AV81G).
+    reproducible raster aggregation pipeline. This work was supported by the 
+    Center for Climate, Health and Society (CHAS) at the University of Chicago 
+    and the Institute for Climate and Sustainable Growth (ICSG) at the 
+    University of Chicago. This package extends the original 
+    'hurricaneexposuredata' package by Brooke Anderson and collaborators with 
+    updated storm exposure data and PRISM-based rainfall datasets.
 URL: https://github.com/ethanqli/hurricaneexposuredata
 BugReports: https://github.com/ethanqli/hurricaneexposuredata/issues
 License: GPL (>=2)

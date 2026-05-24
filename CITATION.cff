@@ -14,18 +14,19 @@ authors:
     given-names: Ethan
     affiliation: University of Chicago
     email: ethanqli@uchicago.edu
-  - family-names: Burrows
-    given-names: Kate
-    affiliation: University of Chicago
-    email: kburrows@uchicago.edu
-  - family-names: Sanghavi
-    given-names: Prachi
-    affiliation: University of Chicago
-    email: psanghavi@uchicago.edu
   - family-names: Nguyen
     given-names: Jessy
     affiliation: University of Chicago
     email: jessyjkn@bsd.uchicago.edu
+  - family-names: Sanghavi
+    given-names: Prachi
+    affiliation: University of Chicago
+    email: psanghavi@uchicago.edu
+  - family-names: Burrows
+    given-names: Kate
+    affiliation: University of Chicago
+    email: kburrows@uchicago.edu
+
 
 abstract: >-
   This repository extends Brooke Anderson and collaborators' original

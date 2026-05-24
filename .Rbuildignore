@@ -10,3 +10,5 @@
 ^README\.Rmd$
 ^README-.*\.png$
 ^CITATIONS\.md$
+^CITATION\.cff$
+^\.zenodo\.json$

@@ -8,7 +8,7 @@ new PRISM-based rainfall data.
 
 If you use the updated data in this repository, please cite this fork:
 
-Li E, Burrows K, Sanghavi P, and Nguyen J, based on work by Anderson B, Schumacher A, Crosson W, Al-Hamdan M,
+Li E, Nguyen J, Sanghavi P, and Burrows K, based on work by Anderson B, Schumacher A, Crosson W, Al-Hamdan M,
 Yan M, Ferreri J, Chen Z, Quiring S, and Guikema S. hurricaneexposuredata:
 Data Characterizing Exposure to Hurricanes in United States Counties.
 R package version 0.1.0. https://doi.org/10.5281/zenodo.20320995
