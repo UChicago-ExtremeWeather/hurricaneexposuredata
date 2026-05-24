@@ -1,7 +1,7 @@
 Package: hurricaneexposuredata
 Type: Package
 Title: Data Characterizing Exposure to Hurricanes in United States Counties
-Version: 0.1.0
+Version: 0.1.2
 Date: 2026-05-14
 Authors@R: c(person("Ethan", "Li",
     email = "ethanqli@uchicago.edu", role = c("aut", "cre")),

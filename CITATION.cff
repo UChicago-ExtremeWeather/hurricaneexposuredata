@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software or data package, please cite it using the metadata from this file."
 title: "hurricaneexposuredata: Data Characterizing Exposure to Hurricanes in United States Counties"
 type: software
-version: "0.1.0"
+version: "0.1.2"
 date-released: "2026-05-14"
 doi: "10.5281/zenodo.20320995"
 url: "https://doi.org/10.5281/zenodo.20320995"
