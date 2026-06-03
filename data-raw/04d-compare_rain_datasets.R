@@ -69,7 +69,7 @@ diff_quantiles <- function(df, diff_col, label) {
 }
 
 rain <- load_dataset_fallback("rain", "data/rain.rda")
-rain_prism <- load_dataset_fallback("rain_prism_wonder", "data/rain_prism_wonder.rda")
+rain_prism <- load_dataset_fallback("rain_prism", "data/rain_prism.rda")
 
 legacy_years <- as.integer(sub(".*-", "", rain$storm_id))
 prism_years <- as.integer(sub(".*-", "", rain_prism$storm_id))

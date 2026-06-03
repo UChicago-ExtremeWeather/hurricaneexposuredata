@@ -11,7 +11,7 @@ library(tidyr)
 library(lubridate)
 library(data.table)
 
-prism_input_file <- "data-raw/prism_precip_export_wonderlike.txt"
+prism_input_file <- "data-raw/prism_precip_export.txt"
 
 check_dates <- dplyr::select(closest_dist, -storm_dist) %>%
   dplyr::mutate(closest_date = ymd(closest_date)) %>%
@@ -38,7 +38,7 @@ check_dates <- dplyr::select(closest_dist, -storm_dist) %>%
 all_dates <- unique(check_dates$day)
 all_fips <- unique(check_dates$fips)
 
-rain_prism_wonder <- data.table::fread(
+rain_prism <- data.table::fread(
   prism_input_file,
   header = TRUE,
   select = c("county", "year_month_day", "precip", "precip_max")
@@ -61,4 +61,4 @@ rain_prism_wonder <- data.table::fread(
     lag = as.numeric(lag)
   )
 
-usethis::use_data(rain_prism_wonder, overwrite = TRUE)
+usethis::use_data(rain_prism, overwrite = TRUE)

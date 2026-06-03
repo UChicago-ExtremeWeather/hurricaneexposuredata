@@ -141,7 +141,7 @@ Characteristics:
 ### 7. Output naming
 
 - Legacy package dataset: `rain`
-- New datasets in this branch: `rain_prism` and `rain_prism_wonder`
+- New dataset in this branch: `rain_prism`
 
 The PRISM datasets were kept separate so the repo can compare them with the
 legacy `rain` dataset before replacing historical package behavior.

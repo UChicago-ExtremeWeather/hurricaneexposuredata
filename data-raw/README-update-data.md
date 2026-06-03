@@ -90,7 +90,7 @@ These scripts:
 
 The current processing script writes:
 
-- `data/rain_prism_wonder.rda`
+- `data/rain_prism.rda`
 
 For more detail, see:
 
