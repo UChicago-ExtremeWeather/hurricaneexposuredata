@@ -86,7 +86,7 @@ What it does:
   - `lag`
   - `precip`
   - `precip_max`
-- Saves `data/rain.rda`
+- Saves `data/rain_prism.rda`
 
 Run:
 

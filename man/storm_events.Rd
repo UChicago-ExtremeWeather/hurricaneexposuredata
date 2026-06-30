@@ -4,16 +4,18 @@
 \name{storm_events}
 \alias{storm_events}
 \title{County storm event listings associated with tropical storms}
-\format{A list with 171 elements. Each element is named after a specific
-   tropical storm and is a dataframe with 2 variables:
+\format{
+A list with 221 elements. Each element is named after a specific
+tropical storm and is a dataframe with 2 variables:
 \describe{
-  \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
-             code}
-  \item{events}{List of extreme events listings for a specific county and storm.
-        Each event is given by event type (e.g., "Tornado", "Flood", "Flash Flood").
-        See documentation in the website referenced below for the NOAA Storm Events
-        database for more information.}
-}}
+\item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
+code}
+\item{events}{List of extreme events listings for a specific county and storm.
+Each event is given by event type (e.g., "Tornado", "Flood", "Flash Flood").
+See documentation in the website referenced below for the NOAA Storm Events
+database for more information.}
+}
+}
 \source{
 Event listings were obtained from the NOAA Storm Events Database, available at:
 https://www.ncdc.noaa.gov/stormevents/
@@ -26,21 +28,21 @@ A list with any county-level storm event listings from NOAA Storm
 Events that were near an Atlantic basin tropical storm in location and time.
 Only storms that came within 250 km of at least one US county were included.
 This database covered tornadoes and a few other types of events throughout
-the full period (1988--2018). Some event types were only included in the database
+the full period (1988--2025). Some event types were only included in the database
 for 1996 and later (e.g. flood events). See the documentation at the website
 listed in the sources for more information on this database.
 }
 \note{
 Listings were generated using the \code{noaastormevents} package. An event
-   listed in the NOAA Storm Events database was matched to a tropical storm if
-   its beginning date was within a five-day window of the date the tropical storm
-   passed closest to the county and if the storm came within 500 km of the county.
-   See the documentation for the \code{noaastormevents} package (currently
-   available through GitHub) for more details on this process. All events that were
-   listed by county were captured for a storm; events that were reported at the
-   forecast zone were also included if it was possible to link the event to its
-   appropriate county. If no events in the NOAA Storm Events database were associated
-   with a tropical storm, that storm is not included in this dataset.
+listed in the NOAA Storm Events database was matched to a tropical storm if
+its beginning date was within a five-day window of the date the tropical storm
+passed closest to the county and if the storm came within 500 km of the county.
+See the documentation for the \code{noaastormevents} package (currently
+available through GitHub) for more details on this process. All events that were
+listed by county were captured for a storm; events that were reported at the
+forecast zone were also included if it was possible to link the event to its
+appropriate county. If no events in the NOAA Storm Events database were associated
+with a tropical storm, that storm is not included in this dataset.
 }
 \author{
 Brooke Anderson \email{brooke.anderson@colostate.edu} and

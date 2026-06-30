@@ -34,12 +34,12 @@
 #' Storm tracks for Atlantic basin storms
 #'
 #' A dataset containing the storm tracks for Atlantic basin tropical
-#' storms between 1988 and 2018, from the US National Hurricane Center's
+#' storms between 1988 and 2025, from the US National Hurricane Center's
 #' Best Track Atlantic hurricane database (HURDAT2). Only storms that
 #' came within 250 km of at least
 #' one US county are included.
 #'
-#' @format A data frame with 5,503 rows and 6 variables:
+#' @format A data frame with 6,904 rows and 6 variables:
 #' \describe{
 #'   \item{storm_id}{Unique storm identifier with the storm name and year,
 #'                  separated by a hyphen (e.g., "Alberto-1988",
@@ -62,7 +62,7 @@
 #'              the nearest 5-knot value)}
 #' }
 #'
-#' @source \url{https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2018-120319.txt}
+#' @source \url{https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2025-02272026.txt}
 #'
 #' @references
 #'
@@ -74,12 +74,12 @@
 #' Excluded storm tracks for Atlantic basin storms
 #'
 #' A dataset containing the storm tracks for Atlantic basin tropical
-#' storms between 1988 and 2018, from the US National Hurricane Center's
+#' storms between 1988 and 2025, from the US National Hurricane Center's
 #' Best Track Atlantic hurricane database (HURDAT2). Only storms that
 #' were excluded from the main 'hurr_tracks' dataset, because they did not
 #' come within 250 km of at least one US county, are included.
 #'
-#' @format A data frame with 9,124 rows and 6 variables:
+#' @format A data frame with 11,798 rows and 6 variables:
 #' \describe{
 #'   \item{storm_id}{Unique storm identifier with the storm name and year,
 #'                  separated by a hyphen (e.g., "Alberto-1988",
@@ -102,7 +102,7 @@
 #'              the nearest 5-knot value)}
 #' }
 #'
-#' @source \url{https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2018-120319.txt}
+#' @source \url{https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2025-02272026.txt}
 #'
 #' @references
 #'
@@ -116,7 +116,7 @@
 #' A dataframe that gives the distance and date-time for the closest
 #' approach of each tropical storm to the mean population center of each
 #' US county in states in the eastern half of the United States. This data includes
-#' all Atlantic-basin storms between 1988 and 2018 that came within at least 250 km
+#' all Atlantic-basin storms between 1988 and 2025 that came within at least 250 km
 #' of at least one US county.
 #'
 #' @details The minimum distance was calculated using the Great Circle method,
@@ -125,7 +125,7 @@
 #' to local time using the \code{countytimezones} package for the \code{local_time}
 #' and \code{closest_date} columns.
 #'
-#' @format A dataframe with 409,716 rows and 7 variables:
+#' @format A dataframe with 529,516 rows and 7 variables:
 #' \describe{
 #'   \item{storm_id}{Unique storm identifier with the storm name and year,
 #'                  separated by a hyphen (e.g., "Alberto-1988",
@@ -234,7 +234,7 @@
 #' windows defined by \code{closest_dist}. It is intended as a PRISM-based
 #' counterpart to the legacy \code{rain} dataset.
 #'
-#' @format A dataframe with 6 variables:
+#' @format A dataframe with 4,404,015 rows and 6 variables:
 #' \describe{
 #'   \item{fips}{A character string with the county's 5-digit Federal Information
 #'               Processing Standard (FIPS) code}
@@ -265,14 +265,16 @@
 #' Modeled county wind speeds for historical storms
 #'
 #' A dataframe with modeled winds for historical tropical storms in the
-#' Atlantic basin for U.S. counties from 1988 to 2018. For each county,
+#' Atlantic basin for U.S. counties from 1988 to 2025. For each county,
 #' the given wind speed is that modeled at the county's population mean
 #' center (based on the 2010 U.S. Census).
 #'
-#' @format A dataframe with 409,716 rows and 6 variables:
+#' @format A dataframe with 529,516 rows and 8 variables:
 #' \describe{
 #'   \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
 #'              code}
+#'   \item{date_time_max_wind}{Date and time when the maximum modeled wind
+#'              speed occurred.}
 #'   \item{vmax_gust}{Maximum modeled gust wind speed in the county during
 #'              the storm.}
 #'   \item{vmax_sust}{Maximum modeled sustained wind speed in the county during
@@ -311,11 +313,11 @@
 #' Events that were near an Atlantic basin tropical storm in location and time.
 #' Only storms that came within 250 km of at least one US county were included.
 #' This database covered tornadoes and a few other types of events throughout
-#' the full period (1988--2018). Some event types were only included in the database
+#' the full period (1988--2025). Some event types were only included in the database
 #' for 1996 and later (e.g. flood events). See the documentation at the website
 #' listed in the sources for more information on this database.
 #'
-#' @format A list with 171 elements. Each element is named after a specific
+#' @format A list with 221 elements. Each element is named after a specific
 #'    tropical storm and is a dataframe with 2 variables:
 #' \describe{
 #'   \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
@@ -351,7 +353,7 @@
 #' A dataframe with storm winds based on the wind radii in the extended
 #' best tracks hurricane data for historical Atlantic basin storms.
 #'
-#' @format A dataframe with 203,660 rows and 5 variables:
+#' @format A dataframe with 323,460 rows and 5 variables:
 #' \describe{
 #'   \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
 #'              code}

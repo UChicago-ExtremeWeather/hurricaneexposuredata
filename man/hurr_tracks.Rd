@@ -4,37 +4,39 @@
 \name{hurr_tracks}
 \alias{hurr_tracks}
 \title{Storm tracks for Atlantic basin storms}
-\format{A data frame with 5,503 rows and 6 variables:
+\format{
+A data frame with 6,904 rows and 6 variables:
 \describe{
-  \item{storm_id}{Unique storm identifier with the storm name and year,
-                 separated by a hyphen (e.g., "Alberto-1988",
-                 "Katrina-2005"). Some storms are "Unnamed" or have other
-                 generic names. In these cases, it may be preferable to identify
-                 the storm using the first four characters of their
-                 ATCF ID (\code{usa_atcf_id}) and the storm season rather than
-                 the storm ID (e.g., 'AL13-1988').}
-  \item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
-                 Forecasting System ID for the storm.}
-  \item{date}{Character string with date and time of storm track recording, in
-              the Universal Time Coordinated (UTC) time zone. This date is formated
-              as \code{\%Y\%m\%d\%H\%M}.}
-  \item{latitude}{Latitude of storm center, in decimal degrees}
-  \item{longitude}{Longitude of storm center, in decimal degrees (note:
-                   longitudes are given as negative values for
-                   longitudes west of the prime meridian)}
-  \item{wind}{1-minute maximum sustained surface wind speed, measured at
-             10 meters above the ground, in knots (values are rounded to
-             the nearest 5-knot value)}
-}}
+\item{storm_id}{Unique storm identifier with the storm name and year,
+separated by a hyphen (e.g., "Alberto-1988",
+"Katrina-2005"). Some storms are "Unnamed" or have other
+generic names. In these cases, it may be preferable to identify
+the storm using the first four characters of their
+ATCF ID (\code{usa_atcf_id}) and the storm season rather than
+the storm ID (e.g., 'AL13-1988').}
+\item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
+Forecasting System ID for the storm.}
+\item{date}{Character string with date and time of storm track recording, in
+the Universal Time Coordinated (UTC) time zone. This date is formated
+as \code{\%Y\%m\%d\%H\%M}.}
+\item{latitude}{Latitude of storm center, in decimal degrees}
+\item{longitude}{Longitude of storm center, in decimal degrees (note:
+longitudes are given as negative values for
+longitudes west of the prime meridian)}
+\item{wind}{1-minute maximum sustained surface wind speed, measured at
+10 meters above the ground, in knots (values are rounded to
+the nearest 5-knot value)}
+}
+}
 \source{
-\url{https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2018-120319.txt}
+\url{https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2025-02272026.txt}
 }
 \usage{
 hurr_tracks
 }
 \description{
 A dataset containing the storm tracks for Atlantic basin tropical
-storms between 1988 and 2018, from the US National Hurricane Center's
+storms between 1988 and 2025, from the US National Hurricane Center's
 Best Track Atlantic hurricane database (HURDAT2). Only storms that
 came within 250 km of at least
 one US county are included.

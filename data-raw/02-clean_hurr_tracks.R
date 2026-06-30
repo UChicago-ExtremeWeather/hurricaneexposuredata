@@ -6,7 +6,7 @@
 
         ## Read in data from HURDAT2
 
-        # Bring in latest version of HURDAT2 (as of May 12, 2022)
+        # Bring in latest version of HURDAT2 (as of February 27, 2026)
         hurdat2 <- read_lines("https://www.nhc.noaa.gov/data/hurdat/hurdat2-1851-2025-02272026.txt")
 
         # Split into the rows with storm names (e.g., "AL011851") and those with storm data

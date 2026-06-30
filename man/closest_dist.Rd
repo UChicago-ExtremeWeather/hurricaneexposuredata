@@ -4,30 +4,32 @@
 \name{closest_dist}
 \alias{closest_dist}
 \title{Closest distances between counties and a storm track}
-\format{A dataframe with 409,716 rows and 7 variables:
+\format{
+A dataframe with 529,516 rows and 7 variables:
 \describe{
-  \item{storm_id}{Unique storm identifier with the storm name and year,
-                 separated by a hyphen (e.g., "Alberto-1988",
-                 "Katrina-2005"). Some storms are "Unnamed" or have other
-                 generic names. In these cases, it may be preferable to identify
-                 the storm using the first four characters of their
-                 ATCF ID (\code{usa_atcf_id}) and the storm season rather than
-                 the storm ID (e.g., 'AL13-1988').}
-  \item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
-                 Forecasting System ID for the storm.}
-  \item{fips}{Character string with the county's 5-digit Federal Information
-              Processing Standard (FIPS) code}
- \item{closest_time_utc}{Character string of time, in UTC, of the closest approach of
-                         the storm to the county's population mean center, based on
-                         storm tracks linearly interpolated to 15-minute increments.}
-  \item{storm_dist}{Numeric of the minimum distance (in kilometers) between the storm's
-                    track and the county's population mean center.}
-  \item{local_time}{Character string of local time of the closest approach of the storm to the
-                    county's population mean center, based on storm tracks linearly
-                    interpolated to 15-minute increments.}
-  \item{closest_date}{Character string with date (based on local time) of the closest
-                      approach of the storm to the county's population mean center.}
-}}
+\item{storm_id}{Unique storm identifier with the storm name and year,
+separated by a hyphen (e.g., "Alberto-1988",
+"Katrina-2005"). Some storms are "Unnamed" or have other
+generic names. In these cases, it may be preferable to identify
+the storm using the first four characters of their
+ATCF ID (\code{usa_atcf_id}) and the storm season rather than
+the storm ID (e.g., 'AL13-1988').}
+\item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
+Forecasting System ID for the storm.}
+\item{fips}{Character string with the county's 5-digit Federal Information
+Processing Standard (FIPS) code}
+\item{closest_time_utc}{Character string of time, in UTC, of the closest approach of
+the storm to the county's population mean center, based on
+storm tracks linearly interpolated to 15-minute increments.}
+\item{storm_dist}{Numeric of the minimum distance (in kilometers) between the storm's
+track and the county's population mean center.}
+\item{local_time}{Character string of local time of the closest approach of the storm to the
+county's population mean center, based on storm tracks linearly
+interpolated to 15-minute increments.}
+\item{closest_date}{Character string with date (based on local time) of the closest
+approach of the storm to the county's population mean center.}
+}
+}
 \usage{
 closest_dist
 }
@@ -35,7 +37,7 @@ closest_dist
 A dataframe that gives the distance and date-time for the closest
 approach of each tropical storm to the mean population center of each
 US county in states in the eastern half of the United States. This data includes
-all Atlantic-basin storms between 1988 and 2018 that came within at least 250 km
+all Atlantic-basin storms between 1988 and 2025 that came within at least 250 km
 of at least one US county.
 }
 \details{

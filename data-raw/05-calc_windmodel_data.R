@@ -1,4 +1,4 @@
-## Be sure to re-build package after running 01 and 02 and before
+## Be sure to re-build package after running 01, 02, and 03 and before
 ## running this
 
 library(dplyr)

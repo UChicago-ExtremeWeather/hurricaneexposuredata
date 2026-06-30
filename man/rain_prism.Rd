@@ -5,7 +5,7 @@
 \alias{rain_prism}
 \title{Rainfall for US counties during Atlantic basin tropical storms}
 \format{
-A dataframe with 6 variables:
+A dataframe with 4,404,015 rows and 6 variables:
 \describe{
 \item{fips}{A character string with the county's 5-digit Federal Information
 Processing Standard (FIPS) code}

@@ -4,42 +4,46 @@
 \name{storm_winds}
 \alias{storm_winds}
 \title{Modeled county wind speeds for historical storms}
-\format{A dataframe with 409,716 rows and 6 variables:
+\format{
+A dataframe with 529,516 rows and 8 variables:
 \describe{
-  \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
-             code}
-  \item{vmax_gust}{Maximum modeled gust wind speed in the county during
-             the storm.}
-  \item{vmax_sust}{Maximum modeled sustained wind speed in the county during
-             the storm.}
-  \item{gust_dur}{Time gust wind was above 20 m / s in the county during
-             the storm.}
-  \item{sust_dur}{Time sustained wind was above 20 m / s in the county during
-             the storm.}
-  \item{storm_id}{Unique storm identifier with the storm name and year,
-                 separated by a hyphen (e.g., "Alberto-1988",
-                 "Katrina-2005"). Some storms are "Unnamed" or have other
-                 generic names. In these cases, it may be preferable to identify
-                 the storm using the ATCF ID (\code{usa_atcf_id}) rather than
-                 the storm ID.}
-  \item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
-                 Forecasting System ID for the storm.}
-}}
+\item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
+code}
+\item{date_time_max_wind}{Date and time when the maximum modeled wind
+speed occurred.}
+\item{vmax_gust}{Maximum modeled gust wind speed in the county during
+the storm.}
+\item{vmax_sust}{Maximum modeled sustained wind speed in the county during
+the storm.}
+\item{gust_dur}{Time gust wind was above 20 m / s in the county during
+the storm.}
+\item{sust_dur}{Time sustained wind was above 20 m / s in the county during
+the storm.}
+\item{storm_id}{Unique storm identifier with the storm name and year,
+separated by a hyphen (e.g., "Alberto-1988",
+"Katrina-2005"). Some storms are "Unnamed" or have other
+generic names. In these cases, it may be preferable to identify
+the storm using the ATCF ID (\code{usa_atcf_id}) rather than
+the storm ID.}
+\item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
+Forecasting System ID for the storm.}
+}
+}
 \usage{
 storm_winds
 }
 \description{
 A dataframe with modeled winds for historical tropical storms in the
-Atlantic basin for U.S. counties from 1988 to 2018. For each county,
+Atlantic basin for U.S. counties from 1988 to 2025. For each county,
 the given wind speed is that modeled at the county's population mean
 center (based on the 2010 U.S. Census).
 }
 \note{
 These wind speeds were modeled from hurricane best tracks
-   data using the \code{stormwindmodel} package to implement the
-   Willoughby wind model. See the "Details" vignette from that package
-   (available at \url{https://cran.r-project.org/web/packages/stormwindmodel/vignettes/Details.html})
-   for extensive details on this modeling process.
+data using the \code{stormwindmodel} package to implement the
+Willoughby wind model. See the "Details" vignette from that package
+(available at \url{https://cran.r-project.org/web/packages/stormwindmodel/vignettes/Details.html})
+for extensive details on this modeling process.
 }
 \author{
 Brooke Anderson \email{brooke.anderson@colostate.edu},
