@@ -1,5 +1,8 @@
 ## Be sure to re-build package after re-running 01 and 02 and before
 ## re-running this
+# Use decennial Census population centers by storm decade:
+# 1988-1999 -> 2000, 2000-2009 -> 2000, 2010-2019 -> 2010,
+# and 2020+ -> 2020.
 
 library(sp)
 library(dplyr)
@@ -8,7 +11,7 @@ library(tidyr)
 library(purrr)
 library(hurricaneexposure)
 
-data(county_centers, package = "hurricaneexposuredata")
+data(county_centers_decennial, package = "hurricaneexposuredata")
 data(hurr_tracks, package = "hurricaneexposuredata")
 
 library(stormwindmodel)
@@ -86,6 +89,15 @@ calc_closest_dist <- function(this_storm = "Katrina-2005"){
         print(this_storm)
         storm_tracks <- subset(all_tracks, storm_id == this_storm)
         this_id <- storm_tracks$usa_atcf_id[1]
+        storm_year <- lubridate::year(storm_tracks$date[1])
+        assigned_year <- dplyr::case_when(
+                storm_year <= 2009 ~ 2000,
+                storm_year <= 2019 ~ 2010,
+                TRUE ~ 2020
+        )
+        county_centers <- county_centers_decennial %>%
+                filter(census_year == assigned_year) %>%
+                select(-census_year)
 
         # Calculate distance from county center to storm path
         storm_county_distances <- spDists(

@@ -8,7 +8,8 @@ dataset without changing the original `04-process_precip_data.R`.
 The new workflow has three steps:
 
 1. Download only the PRISM daily precipitation files needed for storm windows
-2. Aggregate each daily raster to county mean and county max precipitation
+2. Aggregate each daily raster to county mean and county max precipitation,
+   using county-boundary vintages matched to storm decade
 3. Convert the county-day table into the storm-relative `rain` dataset
 
 ## Scripts
@@ -43,6 +44,9 @@ What it does:
 
 - Reads downloaded PRISM zip files one day at a time
 - Extracts the `.tif`
+- Selects the county-boundary vintage needed for each storm window:
+  2000 boundaries for storms through 2009, 2010 boundaries for storms from
+  2010 through 2019, and 2020 boundaries for storms from 2020 onward
 - Computes county mean precipitation (`precip`)
 - Computes county max precipitation (`precip_max`)
 - Appends rows to `data-raw/prism_precip_export.txt`
@@ -79,6 +83,8 @@ What it does:
 
 - Reads `data-raw/prism_precip_export.txt`
 - Matches county-day precipitation to storm-relative lag windows
+- Joins on `fips`, `year_month_day`, and `boundary_year` so each storm window
+  uses the county-boundary vintage assigned in step 2
 - Creates the final `rain` dataset with columns:
   - `fips`
   - `storm_id`
@@ -99,14 +105,14 @@ R_LIBS="/Users/ethanli/hurricaneexposuredata/.r-lib:${R_LIBS}" Rscript data-raw/
 The county-day table written by step 2 is:
 
 ```text
-county,year_month_day,precip,precip_max
+county,boundary_year,year_month_day,precip,precip_max
 ```
 
 Example:
 
 ```text
-1001,20210827,0.0,0.0
-1003,20210827,1.2,4.5
+01001,2020,20210827,0.0,0.0
+01003,2020,20210827,1.2,4.5
 ```
 
 ## Notes
@@ -115,7 +121,13 @@ Example:
   historical NLDAS/CDC WONDER export.
 - The output format of `rain` is kept the same, but the precipitation source
   is different from the original package history.
-- The new PRISM workflow assumes modern county FIPS codes and does not use
-  the old Miami-Dade / Dade County `12025` workaround.
+- The PRISM workflow uses decennial Census cartographic boundary vintages
+  matched to storm decade, mirroring the decennial population-center approach
+  used in `closest_dist`.
+- Census cartographic boundary files are generalized for mapping. Coastal
+  county polygons can differ across vintages because of shoreline and water
+  representation, which can affect county-average precipitation values.
+- The new PRISM workflow assumes modern county FIPS codes and does not use the
+  old Miami-Dade / Dade County `12025` workaround.
 - Downloaded PRISM files are cached under `data-raw/cache/prism/`.
 - Extracted raster files are deleted after aggregation to reduce disk usage.

@@ -4,28 +4,30 @@
 \name{rain}
 \alias{rain}
 \title{Rainfall for US counties during Atlantic basin tropical storms}
-\format{A dataframe with 3,040,524 rows and 6 variables:
+\format{
+A dataframe with 3,040,524 rows and 6 variables:
 \describe{
-  \item{fips}{A character string with the county's 5-digit Federal Information
-              Processing Standard (FIPS) code}
-  \item{storm_id}{Unique storm identifier with the storm name and year,
-                 separated by a hyphen (e.g., "Alberto-1988",
-                 "Katrina-2005"). Some storms are "Unnamed" or have other
-                 generic names. In these cases, it may be preferable to identify
-                 the storm using the first four characters of their
-                 ATCF ID (\code{usa_atcf_id}) and the storm season rather than
-                 the storm ID (e.g., 'AL13-1988').}
-  \item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
-                 Forecasting System ID for the storm.}
-  \item{lag}{Number of days from date when storm was closest to the county
-             (e.g., \code{0} indicates the date the storm was closest to the
-             county, \code{-2} indicates two days before the date when the
-             storm was closest to the county)}
-  \item{precip}{Average daily precipitation, in millimeters, for NLDAS grid
-   points with the county for the given lag day}
-  \item{precip_max}{Maximum daily precipitation, in millimeters, across the NLDAS grid
-   points with the county for the given lag day}
-}}
+\item{fips}{A character string with the county's 5-digit Federal Information
+Processing Standard (FIPS) code}
+\item{storm_id}{Unique storm identifier with the storm name and year,
+separated by a hyphen (e.g., "Alberto-1988",
+"Katrina-2005"). Some storms are "Unnamed" or have other
+generic names. In these cases, it may be preferable to identify
+the storm using the first four characters of their
+ATCF ID (\code{usa_atcf_id}) and the storm season rather than
+the storm ID (e.g., 'AL13-1988').}
+\item{usa_atcf_id}{Character string with the Automated Tropical Cyclone
+Forecasting System ID for the storm.}
+\item{lag}{Number of days from date when storm was closest to the county
+(e.g., \code{0} indicates the date the storm was closest to the
+county, \code{-2} indicates two days before the date when the
+storm was closest to the county)}
+\item{precip}{Average daily precipitation, in millimeters, for NLDAS grid
+points with the county for the given lag day}
+\item{precip_max}{Maximum daily precipitation, in millimeters, across the NLDAS grid
+points with the county for the given lag day}
+}
+}
 \usage{
 rain
 }
@@ -38,27 +40,27 @@ are included.
 }
 \details{
 This dataset was aggregated from hourly, 1/8 degree gridded data
-   from North America Land Data Assimilation System Phase 2 (NLDAS-2)
-   precipitation data files to generate daily, county-level precipitation
-   measures. The NLDAS-2 data integrates satellite-based and land-based
-   monitoring and applies a land-surface model to create a reanalysis
-   dataset that is spatially and temporally complete across the continental
-   United States. To aggregate to a daily county-level value, we averaged
-   the data at each grid point to generate a daily averaged and then
-   averaged this value across all grid points within a county's boundaries.
-   We used county boundaries based on boundaries at the time of the 1990
-   US Census. The date-time for each observation at each grid point was
-   converted to local time (not considering Daylight Savings Time) before
-   daily averages were generated for the grid point.
+from North America Land Data Assimilation System Phase 2 (NLDAS-2)
+precipitation data files to generate daily, county-level precipitation
+measures. The NLDAS-2 data integrates satellite-based and land-based
+monitoring and applies a land-surface model to create a reanalysis
+dataset that is spatially and temporally complete across the continental
+United States. To aggregate to a daily county-level value, we averaged
+the data at each grid point to generate a daily averaged and then
+averaged this value across all grid points within a county's boundaries.
+We used county boundaries based on boundaries at the time of the 1990
+US Census. The date-time for each observation at each grid point was
+converted to local time (not considering Daylight Savings Time) before
+daily averages were generated for the grid point.
 }
 \note{
 This data set is based on data acquired as part of the mission of
-   NASA-s Earth Science Division and archived and distributed by the
-   Goddard Earth Sciences (GES) Data and Information Services Center (DISC).
-   The county-aggregated daily precipitation values used for this data set
-   are available for download through the Center for Disease Control's
-   Wide-ranging Online Data for Epidemiological Research (WONDER) system
-   (see references).
+NASA-s Earth Science Division and archived and distributed by the
+Goddard Earth Sciences (GES) Data and Information Services Center (DISC).
+The county-aggregated daily precipitation values used for this data set
+are available for download through the Center for Disease Control's
+Wide-ranging Online Data for Epidemiological Research (WONDER) system
+(see references).
 }
 \references{
 Al-Hamdan MZ, Crosson WL, Economou SA, Estes MG, Estes SM, Hemmings SN,
@@ -76,7 +78,7 @@ Data and Information Services Center.
 }
 \author{
 William Crosson \email{bill.crosson@nasa.gov},
-   Mohammad Al-Hamdan \email{mohammad.alhamdan@nasa.gov}, and
-   Brooke Anderson \email{brooke.anderson@colostate.edu}
+Mohammad Al-Hamdan \email{mohammad.alhamdan@nasa.gov}, and
+Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
 \keyword{datasets}

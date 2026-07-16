@@ -4,19 +4,21 @@
 \name{county_centers}
 \alias{county_centers}
 \title{Location of United States county centers of population}
-\format{A data frame with 3,221 rows and 6 variables:
+\format{
+A data frame with 3,221 rows and 6 variables:
 \describe{
-  \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
-             code}
-  \item{county_name}{County name}
-  \item{state_name}{State name}
-  \item{population}{Population of the county as of the 2010 US Census}
-  \item{latitude}{Latitude of county's center of population, in decimal
-                 degrees}
-  \item{longitude}{Longitude of county's center of population, in decimal
-                  degrees (note: longitudes are given as negative values for
-                  longitudes west of the prime meridian)}
-}}
+\item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
+code}
+\item{county_name}{County name}
+\item{state_name}{State name}
+\item{population}{Population of the county as of the 2010 US Census}
+\item{latitude}{Latitude of county's center of population, in decimal
+degrees}
+\item{longitude}{Longitude of county's center of population, in decimal
+degrees (note: longitudes are given as negative values for
+longitudes west of the prime meridian)}
+}
+}
 \source{
 \url{https://www.census.gov/geo/reference/centersofpop.html}
 }
@@ -31,12 +33,15 @@ based on population as of the 2010 US Census.
 \details{
 The latitude and longitude of each county are the county's
 population-weighted mean center of population, based on population as of the
-2010 US Census. For more details on the calculation of these mean centers of
-population, see the reference below.
+2010 US Census. The closest-distance workflow uses decennial county
+population centers matched to storm decade, using 2000 centers for storms
+through 2009, 2010 centers for storms from 2010 through 2019, and 2020
+centers for storms from 2020 onward. For more details on the calculation of
+these mean centers of population, see the reference below.
 }
 \references{
 Bureau of the Census, Centers of Population Computation for the United
 States 1950-2010, U.S. Department of Commerce, Bureau of the Census,
-  Washington, DC, issued 2011. \url{http://www2.census.gov/geo/pdfs/reference/cenpop2010/COP2010_documentation.pdf}
+Washington, DC, issued 2011. \url{http://www2.census.gov/geo/pdfs/reference/cenpop2010/COP2010_documentation.pdf}
 }
 \keyword{datasets}

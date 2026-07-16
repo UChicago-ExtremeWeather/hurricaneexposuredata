@@ -5,7 +5,7 @@
 \alias{storm_winds}
 \title{Modeled county wind speeds for historical storms}
 \format{
-A dataframe with 529,516 rows and 8 variables:
+A dataframe with 529,474 rows and 8 variables:
 \describe{
 \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
 code}
@@ -36,14 +36,17 @@ storm_winds
 A dataframe with modeled winds for historical tropical storms in the
 Atlantic basin for U.S. counties from 1988 to 2025. For each county,
 the given wind speed is that modeled at the county's population mean
-center (based on the 2010 U.S. Census).
+center, using decennial Census population centers matched to storm decade.
 }
 \note{
 These wind speeds were modeled from hurricane best tracks
 data using the \code{stormwindmodel} package to implement the
 Willoughby wind model. See the "Details" vignette from that package
 (available at \url{https://cran.r-project.org/web/packages/stormwindmodel/vignettes/Details.html})
-for extensive details on this modeling process.
+for extensive details on this modeling process. County wind estimates
+use the same decennial population-center assignment as \code{closest_dist}:
+2000 centers for storms through 2009, 2010 centers for storms from 2010
+through 2019, and 2020 centers for storms from 2020 onward.
 }
 \author{
 Brooke Anderson \email{brooke.anderson@colostate.edu},

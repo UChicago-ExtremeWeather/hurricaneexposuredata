@@ -6,8 +6,11 @@
 #'
 #' @details The latitude and longitude of each county are the county's
 #' population-weighted mean center of population, based on population as of the
-#' 2010 US Census. For more details on the calculation of these mean centers of
-#' population, see the reference below.
+#' 2010 US Census. The closest-distance workflow uses decennial county
+#' population centers matched to storm decade, using 2000 centers for storms
+#' through 2009, 2010 centers for storms from 2010 through 2019, and 2020
+#' centers for storms from 2020 onward. For more details on the calculation of
+#' these mean centers of population, see the reference below.
 #'
 #' @format A data frame with 3,221 rows and 6 variables:
 #' \describe{
@@ -120,12 +123,15 @@
 #' of at least one US county.
 #'
 #' @details The minimum distance was calculated using the Great Circle method,
-#' using the \code{spDist} function from the \code{sp} package.
+#' using the \code{spDist} function from the \code{sp} package. County
+#' population centers were matched to storm decade, using 2000 centers for
+#' storms through 2009, 2010 centers for storms from 2010 through 2019, and
+#' 2020 centers for storms from 2020 onward.
 #' The time of the closest approach of the storm to each county was converted from UTC
 #' to local time using the \code{countytimezones} package for the \code{local_time}
 #' and \code{closest_date} columns.
 #'
-#' @format A dataframe with 529,516 rows and 7 variables:
+#' @format A dataframe with 529,474 rows and 7 variables:
 #' \describe{
 #'   \item{storm_id}{Unique storm identifier with the storm name and year,
 #'                  separated by a hyphen (e.g., "Alberto-1988",
@@ -234,7 +240,7 @@
 #' windows defined by \code{closest_dist}. It is intended as a PRISM-based
 #' counterpart to the legacy \code{rain} dataset.
 #'
-#' @format A dataframe with 4,404,015 rows and 6 variables:
+#' @format A dataframe with 4,765,266 rows and 6 variables:
 #' \describe{
 #'   \item{fips}{A character string with the county's 5-digit Federal Information
 #'               Processing Standard (FIPS) code}
@@ -257,6 +263,15 @@
 #'    \code{rain} dataset but uses a different underlying precipitation product.
 #'    County-day summaries are built from PRISM daily precipitation grids and
 #'    then matched to storm-relative windows using \code{closest_dist}.
+#'    PRISM precipitation values were aggregated from daily PRISM rasters to
+#'    county polygons using Census cartographic boundary vintages matched to
+#'    the storm decade: 2000 boundaries for storms through 2009, 2010
+#'    boundaries for storms from 2010 through 2019, and 2020 boundaries for
+#'    storms from 2020 onward. This mirrors the decennial population-center
+#'    approach used in \code{closest_dist}. Because Census cartographic
+#'    boundary files are generalized for mapping, coastal county polygons can
+#'    differ across vintages; these differences may affect county-average
+#'    precipitation values.
 #'
 #' @source PRISM Climate Group at Oregon State University daily precipitation
 #'    rasters, aggregated to counties in the package build scripts.
@@ -267,9 +282,9 @@
 #' A dataframe with modeled winds for historical tropical storms in the
 #' Atlantic basin for U.S. counties from 1988 to 2025. For each county,
 #' the given wind speed is that modeled at the county's population mean
-#' center (based on the 2010 U.S. Census).
+#' center, using decennial Census population centers matched to storm decade.
 #'
-#' @format A dataframe with 529,516 rows and 8 variables:
+#' @format A dataframe with 529,474 rows and 8 variables:
 #' \describe{
 #'   \item{fips}{County's 5-digit Federal Information Processing Standard (FIPS)
 #'              code}
@@ -297,7 +312,10 @@
 #'    data using the \code{stormwindmodel} package to implement the
 #'    Willoughby wind model. See the "Details" vignette from that package
 #'    (available at \url{https://cran.r-project.org/web/packages/stormwindmodel/vignettes/Details.html})
-#'    for extensive details on this modeling process.
+#'    for extensive details on this modeling process. County wind estimates
+#'    use the same decennial population-center assignment as \code{closest_dist}:
+#'    2000 centers for storms through 2009, 2010 centers for storms from 2010
+#'    through 2019, and 2020 centers for storms from 2020 onward.
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@colostate.edu},

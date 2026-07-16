@@ -8,7 +8,8 @@ library(purrr)
 library(sf)
 library(stormwindmodel) ## For now, must use the `add_cpp` branch of the devel version
 
-data(hurr_tracks)
+load("data/hurr_tracks.rda")
+load("data/county_centers_decennial.rda")
 
 ## Read in data from HURDAT2
 
@@ -157,7 +158,6 @@ hd_interp <- clean_hd %>%
   ungroup()
 
 ## Load county centers and limit to those in our study states
-data("county_centers")
 study_states <- c("Alabama", "Arkansas", "Connecticut", "Delaware",
                   "District of Columbia", "Florida", "Georgia",
                   "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
@@ -167,8 +167,25 @@ study_states <- c("Alabama", "Arkansas", "Connecticut", "Delaware",
                   "Ohio", "Oklahoma", "Pennsylvania", "Rhode Island",
                   "South Carolina", "Tennessee", "Texas", "Vermont",
                   "Virginia", "West Virginia", "Wisconsin")
-county_centers <- county_centers %>%
-  filter(state_name %in% study_states)
+
+assign_center_year <- function(storm_year) {
+  dplyr::case_when(
+    storm_year <= 2009 ~ 2000,
+    storm_year <= 2019 ~ 2010,
+    TRUE ~ 2020
+  )
+}
+
+make_county_centers <- function(storm_id) {
+  storm_year <- as.integer(str_extract(storm_id, "[0-9]{4}$"))
+  center_year <- assign_center_year(storm_year)
+
+  county_centers_decennial %>%
+    filter(
+      census_year == center_year,
+      state_name %in% study_states
+    )
+}
 
 ## Determine county winds based on interpolated storm track and
 ## county centers. Assumes storm track is interpolated to 15 minutes.
@@ -233,7 +250,7 @@ find_storm_wind <- function(storm_track, county_centers){
 ## Use this function to determine wind radii-based winds for all storms
 ext_tracks_wind <- hd_interp %>%
   split(f = .$storm_id) %>%
-  purrr::map_df(~ find_storm_wind(.x, county_centers)) %>%
+  purrr::map_df(~ find_storm_wind(.x, make_county_centers(.x$storm_id[1]))) %>%
   bind_rows()
 
 usethis::use_data(ext_tracks_wind, overwrite = TRUE)

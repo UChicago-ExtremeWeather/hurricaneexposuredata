@@ -5,8 +5,8 @@ library(lubridate)
 library(stringr)
 library(tidyr)
 
-data(hurr_tracks, package = "hurricaneexposuredata")
-data(closest_dist, package = "hurricaneexposuredata")
+load("data/hurr_tracks.rda")
+load("data/closest_dist.rda")
 
 stormevents_base_url <- "https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/"
 stormevents_cache_dir <- "data-raw/cache/stormevents"

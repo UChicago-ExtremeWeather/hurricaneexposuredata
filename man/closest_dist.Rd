@@ -5,7 +5,7 @@
 \alias{closest_dist}
 \title{Closest distances between counties and a storm track}
 \format{
-A dataframe with 529,516 rows and 7 variables:
+A dataframe with 529,474 rows and 7 variables:
 \describe{
 \item{storm_id}{Unique storm identifier with the storm name and year,
 separated by a hyphen (e.g., "Alberto-1988",
@@ -42,7 +42,10 @@ of at least one US county.
 }
 \details{
 The minimum distance was calculated using the Great Circle method,
-using the \code{spDist} function from the \code{sp} package.
+using the \code{spDist} function from the \code{sp} package. County
+population centers were matched to storm decade, using 2000 centers for
+storms through 2009, 2010 centers for storms from 2010 through 2019, and
+2020 centers for storms from 2020 onward.
 The time of the closest approach of the storm to each county was converted from UTC
 to local time using the \code{countytimezones} package for the \code{local_time}
 and \code{closest_date} columns.

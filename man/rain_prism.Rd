@@ -5,7 +5,7 @@
 \alias{rain_prism}
 \title{Rainfall for US counties during Atlantic basin tropical storms}
 \format{
-A dataframe with 4,404,015 rows and 6 variables:
+A dataframe with 4,765,266 rows and 6 variables:
 \describe{
 \item{fips}{A character string with the county's 5-digit Federal Information
 Processing Standard (FIPS) code}
@@ -44,5 +44,14 @@ This dataset preserves the output structure of the legacy
 \code{rain} dataset but uses a different underlying precipitation product.
 County-day summaries are built from PRISM daily precipitation grids and
 then matched to storm-relative windows using \code{closest_dist}.
+PRISM precipitation values were aggregated from daily PRISM rasters to
+county polygons using Census cartographic boundary vintages matched to
+the storm decade: 2000 boundaries for storms through 2009, 2010
+boundaries for storms from 2010 through 2019, and 2020 boundaries for
+storms from 2020 onward. This mirrors the decennial population-center
+approach used in \code{closest_dist}. Because Census cartographic
+boundary files are generalized for mapping, coastal county polygons can
+differ across vintages; these differences may affect county-average
+precipitation values.
 }
 \keyword{datasets}
