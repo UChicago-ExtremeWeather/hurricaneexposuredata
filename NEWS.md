@@ -1,4 +1,4 @@
-# hurricaneexposuredata 0.1.2
+# hurricaneexposuredata 0.1.3
 
 * Add storms for 2016, 2017, and 2018. For these, we have storm tracks, storm winds, 
 and flood and tornado events. These do not include storm rains, but we hope to
@@ -23,5 +23,4 @@ linear spline interpolation for the wind radii values.
 * Finalized lists of authors, contributors, and funding support. 
 * Finalized documentation for current data. 
 * Added a `NEWS.md` file to track changes to the package.
-
 
