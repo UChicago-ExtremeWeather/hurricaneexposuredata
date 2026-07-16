@@ -10,3 +10,5 @@ writing/*
 data-raw/eda/*.pdf
 data-raw/nasa_data_updates/*
 data-raw/cache/
+data-raw/04b-aggregate_prism_to_counties_pre_decennial.R
+data-raw/04c-process_prism_precip_data_pre_decennial.R
