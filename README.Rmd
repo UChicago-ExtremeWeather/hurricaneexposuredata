@@ -19,7 +19,7 @@ R package with hazard-based exposure data for U.S. counties for historical tropi
 
 If you use this package, please cite the archived release:
 
-<https://doi.org/10.5281/zenodo.20320995>
+<https://doi.org/10.5281/zenodo.21249129>
 
 For more citation guidance, see [`CITATIONS.md`](CITATIONS.md).
 
